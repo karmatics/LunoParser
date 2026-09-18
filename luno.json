@@ -1,0 +1,17 @@
+{
+  "name": "LunoTests",
+  "version": "1.0.0",
+  "description": "Comprehensive Diagnostic Test Harness for Luno Protocol, AST Patching, and Determinism",
+  "type": "luno-test-suite",
+  "entrypoint": {
+    "file": "LunoTestRunner.js",
+    "class": "LunoTestRunner",
+    "method": "mountUI"
+  },
+  "main": [
+    "LunoTestRunner.js"
+  ],
+  "library": [
+    "DomBasics.js"
+  ]
+}
