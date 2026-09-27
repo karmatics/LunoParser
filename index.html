@@ -3,22 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luno Tests & Diagnostics</title>
+  <title>LunoParser & AST Test Suite</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js"></script>
-  <!-- Resilient Multi-Tier Loader: Local -> User Fork -> Karmatics Fallback -->
+  <script src="/Luno/vendor/acorn.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js';"></script>
+  
+  <!-- Luno Core mock helpers to ensure client tests for browser/manifest pass -->
+  <script src="/Luno/app/LunoFileSystem.js"></script>
+  <script src="/Luno/app/LunoApiClient.js"></script>
+  <script src="/Luno/app/LunoManifestDecisionEngine.js"></script>
+  <script src="/Luno/app/OutboxQueue.js"></script>
+  <script src="/Luno/browser/DiskBrowser.js"></script>
+  <script src="/Luno/app/LunoDeployEngine.js"></script>
+  <script src="/Luno/app/ClientAppPaster.js"></script>
+  
+  <!-- Canonical LunoParser Engine Files -->
+  <script src="./LunoPayloadParser.js"></script>
+  <script src="./LunoClassPatcher.js"></script>
+  <script src="./LunoTestRunner.js"></script>
+
+  <!-- Shared Library Loader -->
   <script src="/Library/LunoLoader.js" onerror="this.onerror=null; (function(el){ var u=(window.location.hostname.endsWith('.github.io')?window.location.hostname.split('.')[0]:'karmatics'); el.src='https://'+u+'.github.io/Library/LunoLoader.js'; el.onerror=function(){ el.onerror=null; el.src='https://karmatics.github.io/Library/LunoLoader.js'; }; })(this);"></script>
 </head>
 <body>
   <div id="app-container">
     <div style="padding: 1.5rem; text-align: center; color: #00f2fe; font-family: monospace;">
-      ⚡ Initializing Luno diagnostic test suite...
+      ⚡ Initializing LunoParser test suite...
     </div>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", async function() {
-      if (typeof LunoLoader !== "undefined") {
-        await LunoLoader.loadApp("app-container");
+      const container = document.getElementById("app-container");
+      if (typeof LunoTestRunner !== "undefined") {
+        LunoTestRunner.mountUI(container);
       }
     });
   </script>

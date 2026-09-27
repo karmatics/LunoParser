@@ -1,8 +1,8 @@
 {
-  "name": "LunoTests",
+  "name": "LunoParser",
   "version": "1.0.0",
-  "description": "Luno AST Parser & Protocol Automated Diagnostic Test Suite",
-  "type": "luno-test-suite",
+  "description": "Luno HTML Container AST Parser & Protocol Library (with interactive diagnostic test suite)",
+  "type": "luno-library-app",
   "entrypoint": {
     "file": "LunoTestRunner.js",
     "class": "LunoTestRunner",
@@ -18,5 +18,8 @@
   ],
   "styles": [
     "styles.css"
-  ]
+  ],
+  "processedCountSinceCheckpoint": 0,
+  "lastCheckpointTime": "2026-09-27T17:16:01.944Z",
+  "pendingCheckpointDescription": "LunoParser library established"
 }
