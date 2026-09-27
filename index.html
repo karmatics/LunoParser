@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luno Diagnostic Tests</title>
-  <style>
-    body { background: #0d1117; color: #c9d1d9; font-family: monospace; padding: 1rem; margin: 0; min-height: 100vh; }
-    #test-root { max-width: 780px; margin: 0 auto; }
-  </style>
-  <script src="/Luno/app/acorn.js"></script>
-  <script src="/Library/DomBasics.js"></script>
-  <script src="/Luno/core/LunoClassPatcher.js"></script>
-  <script src="/Luno/app/LunoPayloadParser.js"></script>
-  <script src="/Luno/app/LunoManifestDecisionEngine.js"></script>
-  <script src="/Luno/app/OutboxQueue.js"></script>
-  <script src="/Luno/browser/DiskBrowser.js"></script>
-  <script src="/Luno/app/LunoDeployEngine.js"></script>
-  <script src="./LunoTestRunner.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luno Tests & Diagnostics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js"></script>
+  <!-- Resilient Multi-Tier Loader: Local -> User Fork -> Karmatics Fallback -->
+  <script src="/Library/LunoLoader.js" onerror="this.onerror=null; (function(el){ var u=(window.location.hostname.endsWith('.github.io')?window.location.hostname.split('.')[0]:'karmatics'); el.src='https://'+u+'.github.io/Library/LunoLoader.js'; el.onerror=function(){ el.onerror=null; el.src='https://karmatics.github.io/Library/LunoLoader.js'; }; })(this);"></script>
 </head>
 <body>
-  <div id="test-root"></div>
+  <div id="app-container">
+    <div style="padding: 1.5rem; text-align: center; color: #00f2fe; font-family: monospace;">
+      ⚡ Initializing Luno diagnostic test suite...
+    </div>
+  </div>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      if (typeof LunoTestRunner !== "undefined") {
-        LunoTestRunner.mountUI(document.getElementById("test-root"));
+    document.addEventListener("DOMContentLoaded", async function() {
+      if (typeof LunoLoader !== "undefined") {
+        await LunoLoader.loadApp("app-container");
       }
     });
   </script>
