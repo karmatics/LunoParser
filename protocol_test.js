@@ -18,6 +18,14 @@ class ProtocolTest {
     return MathHelper.add(a, b) * 2;
 
   }
+
+  workingValidMethod() {
+      return "valid";
+    }
+
+  workingMethod() {
+      return 100;
+    }
 }
 
 globalThis.ProtocolTest = ProtocolTest;

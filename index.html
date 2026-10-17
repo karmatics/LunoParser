@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LunoParser & AST Test Suite</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="/Luno/vendor/acorn.js" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js';"></script>
+    <!-- Acorn AST Parser (CDN with secondary CDN fallback) -->
+  <script src="https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js" onerror="this.onerror=null; this.src='https://cdnjs.cloudflare.com/ajax/libs/acorn/8.11.3/acorn.min.js';"></script>
   
   <!-- Luno Core mock helpers to ensure client tests for browser/manifest pass -->
   <script src="/Luno/app/LunoFileSystem.js"></script>
