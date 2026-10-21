@@ -19,19 +19,16 @@
   "styles": [
     "styles.css"
   ],
-  "processedCountSinceCheckpoint": 10,
-  "lastCheckpointTime": "2026-09-27T18:47:21.351Z",
-  "pendingCheckpointDescription": "Clean working tree",
-  "changedMethods": {
-    "vibes/src/editor/handlers/LunoProtocolExecutor.js": "2026-09-27T19:23:12.616Z",
-    "LunoTestRunner.js": "2026-09-27T19:23:12.616Z",
-    "Luno/app/LunoPayloadParser.js": "2026-10-06T04:51:57.399Z",
-    "LunoPayloadParser.js": "2026-10-06T04:51:57.399Z",
-    "Luno/app/ClientAppPaster.js": "2026-10-06T04:51:57.399Z",
-    "Luno/app/MicroApprovalBadge.js": "2026-10-06T04:51:57.399Z",
-    "Luno/app/LunoPromptInstructions.js": "2026-10-06T04:51:57.399Z",
-    "RunOnServerTools/luno.json": "2026-10-06T04:51:57.399Z",
-    "RunOnServerTools/index.html": "2026-10-06T04:51:57.399Z",
-    "RunOnServerTools/js/RunOnServerTools.js": "2026-10-06T04:51:57.399Z"
+  "visibilitySets": {
+    "core": [
+      "LunoPayloadParser.js",
+      "LunoClassPatcher.js"
+    ],
+    "tests": [
+      "LunoPayloadParser.js",
+      "LunoClassPatcher.js",
+      "LunoTestRunner.js",
+      "protocol_test.js"
+    ]
   }
 }
