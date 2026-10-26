@@ -30,5 +30,8 @@
       "LunoTestRunner.js",
       "protocol_test.js"
     ]
-  }
+  },
+  "processedCountSinceCheckpoint": 0,
+  "lastCheckpointTime": "2026-10-21T08:12:31.919Z",
+  "pendingCheckpointDescription": "Clean working tree"
 }
