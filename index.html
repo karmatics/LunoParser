@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LunoParser & AST Test Suite</title>
   <link rel="stylesheet" href="styles.css" />
-    <!-- Acorn AST Parser (CDN with secondary CDN fallback) -->
+  <!-- Acorn AST Parser (CDN with secondary CDN fallback) -->
   <script src="https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js" onerror="this.onerror=null; this.src='https://cdnjs.cloudflare.com/ajax/libs/acorn/8.11.3/acorn.min.js';"></script>
   
-  <!-- Luno Core mock helpers to ensure client tests for browser/manifest pass -->
+  <!-- Luno Core helpers so all 69 parser, AST, diff, and browser tests pass -->
+  <script src="/Luno/app/LunoUIComponents.js"></script>
+  <script src="/Luno/app/LunoSettings.js"></script>
   <script src="/Luno/app/LunoFileSystem.js"></script>
   <script src="/Luno/app/LunoApiClient.js"></script>
+  <script src="/Luno/app/LunoLinearParser.js"></script>
   <script src="/Luno/app/LunoManifestDecisionEngine.js"></script>
+  <script src="/Luno/app/CodeDiffer.js"></script>
+  <script src="/Luno/app/LunoHistoryManager.js"></script>
   <script src="/Luno/app/OutboxQueue.js"></script>
   <script src="/Luno/browser/DiskBrowser.js"></script>
   <script src="/Luno/app/LunoDeployEngine.js"></script>
@@ -32,10 +37,11 @@
     </div>
   </div>
   <script>
-    document.addEventListener("DOMContentLoaded", async function() {
-      const container = document.getElementById("app-container");
-      if (typeof LunoTestRunner !== "undefined") {
-        LunoTestRunner.mountUI(container);
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof LunoLoader !== "undefined") {
+        LunoLoader.loadApp("app-container");
+      } else if (typeof LunoTestRunner !== "undefined") {
+        LunoTestRunner.mountUI(document.getElementById("app-container"));
       }
     });
   </script>
